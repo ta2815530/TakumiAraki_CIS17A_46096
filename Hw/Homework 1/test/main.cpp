@@ -37,11 +37,45 @@ int main(int argc, char** argv) {
         cloudyNumber[MONTHS],
         sunnyNumber[MONTHS]; 
     
+    int 
+    
+    
     string mostFrequentRain;
     string whichMonth;
     
-
-    //read in file
+    /*
+    ofstream outputFile;
+    
+    outputFile.open("RainOrShine.txt");
+    
+    char w[MONTHS][DAYS];
+    
+    
+    for(int i=0;i<MONTHS;i++)
+    {
+            if(i==0)
+                whichMonth = "June";
+            else if(i==1)
+                whichMonth = "July";
+            else 
+                whichMonth = "August";
+            
+            cout << "In " << whichMonth << endl;
+            
+        for(int j=0;j<DAYS;j++)
+        {
+            cout << "Enter rain(r), cloudy(c), or sunny(s) on day #" << j+1 << endl;
+            cin >> w[i][j];
+            outputFile << w[i][j] << " ";
+        }
+         
+        cout << endl;
+    }
+    
+    outputFile.close();
+    */
+    
+    
     
     ifstream inputFile;
    
@@ -57,30 +91,11 @@ int main(int argc, char** argv) {
         }
     }
     
-    //close file
     inputFile.close();
     
     
     for(int i=0;i<MONTHS;i++)
     {
-        rainyNumber[i]=0;
-        cloudyNumber[i]=0;
-        sunnyNumber[i]=0;
-    
-    }
-    
-    
-    for(int i=0;i<MONTHS;i++)
-    {
-        if(i==0)
-            whichMonth = "June";
-        else if(i==1)
-            whichMonth = "July";
-        else 
-            whichMonth = "August";
-
-        cout << whichMonth << endl;       
-        
         for(int j=0;j<DAYS;j++)
         {
             if(weather[i][j]=='r'||weather[i][j]=='R')
@@ -90,28 +105,14 @@ int main(int argc, char** argv) {
             }
             else if(weather[i][j]=='c'||weather[i][j]=='C')
             {
-                cloudyNumber[i] += 1;
+                //*(cloudptr+i)++;
             }
-            else if(weather[i][j]=='s'||weather[i][j]=='S')
+            else//(weather[i][j]=='s'||weather[i][j]=='S')
             {
-                sunnyNumber[i] += 1;
+                //*(sunptr+i)++;
             }
         }
     }
-    
-    
-    cout << "rainNumber #" << 1 << " " << rainyNumber[0] << endl;
-    cout << "rainNumber #" << 2 << " " << rainyNumber[1] << endl;
-    cout << "rainNumber #" << 3 << " " << rainyNumber[2] << endl;
-    
-    cout << "cloudyNumber #" << 1 << " " << cloudyNumber[0] << endl;
-    cout << "cloudyNumber #" << 2 << " " << cloudyNumber[1] << endl;
-    cout << "cloudyNumber #" << 3 << " " << cloudyNumber[2] << endl;
-    
-    cout << "sunnyNumber #" << 1 << " " << sunnyNumber[0] << endl;
-    cout << "sunnyNumber #" << 2 << " " << sunnyNumber[1] << endl;
-    cout << "sunnyNumber #" << 3 << " " << sunnyNumber[2] << endl;
-    
     
     
     if(rainyNumber[1]>=rainyNumber[2] && rainyNumber[1]>=rainyNumber[2])
@@ -149,4 +150,5 @@ int main(int argc, char** argv) {
     
     return 0;
 }
+
 
