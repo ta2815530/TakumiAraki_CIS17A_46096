@@ -1,3 +1,5 @@
+//I'm testing if I can make a change
+
 /*
  *An amateur meteorologist wants to keep track of weather conditions during the
  * past year's three-month summer season and has designated each day as either rainy ('R')
