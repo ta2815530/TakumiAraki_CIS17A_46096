@@ -1,3 +1,5 @@
+//Description
+
 /*
  * Many financial experts advise that property owners should insure their homes
  * or buildings for at least 80 % of the amount it would cost to replace the structure.
@@ -5,12 +7,6 @@
  * and then displays the minimum amount of insurance he or she should buy for the property.
  */
 
-/* 
- * File:   main.cpp
- * Author: rcc
- *
- * Created on June 20, 2019, 1:50 PM
- */
 
 #include <cstdlib>
 #include <iostream>
