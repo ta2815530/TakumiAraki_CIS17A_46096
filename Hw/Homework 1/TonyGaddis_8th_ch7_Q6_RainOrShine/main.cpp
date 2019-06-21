@@ -12,12 +12,6 @@
  * the RainOrShine.txt file.
  */
 
-/* 
- * File:   main.cpp
- * Author: rcc
- *
- * Created on June 20, 2019, 2:56 PM
- */
 
 #include <cstdlib>
 #include <iostream>
@@ -39,6 +33,47 @@ int main(int argc, char** argv) {
     
     string mostFrequentRain;
     string whichMonth;
+    
+    
+    //this code is to get the data from the user and write a file
+    
+    /*
+     //get data from the user
+     
+     char w[MONTHS][DAYS];
+     
+     for(int i=0;i<MONTHS;i++)
+     {
+     for(int j=0;j<DAYS;j++)
+     {
+     cout << "Day #" << j+1 << "Enter r, c, or s: ";
+     cin >> w[i][j];
+     }
+     cout << endl;
+     }
+     
+     
+     //write a file
+     
+     ofstream outputFile;
+     
+     outputFile.open("RainOrShine.txt");
+     
+     //char w[MONTHS][DAYS];
+     
+     for(int i=0;i<MONTHS;i++)
+     {
+     for(int j=0;j<DAYS;j++)
+     {
+     outputFile << w[i][j] << " ";
+     }
+     cout << endl;
+     }
+     
+     //close file
+     outputFile.close();
+     */
+    
     
 
     //read in file
@@ -66,27 +101,16 @@ int main(int argc, char** argv) {
         rainyNumber[i]=0;
         cloudyNumber[i]=0;
         sunnyNumber[i]=0;
-    
     }
     
     
     for(int i=0;i<MONTHS;i++)
     {
-        if(i==0)
-            whichMonth = "June";
-        else if(i==1)
-            whichMonth = "July";
-        else 
-            whichMonth = "August";
-
-        cout << whichMonth << endl;       
-        
         for(int j=0;j<DAYS;j++)
         {
             if(weather[i][j]=='r'||weather[i][j]=='R')
             {
                 rainyNumber[i] += 1;
-                cout << rainyNumber[i] << endl;
             }
             else if(weather[i][j]=='c'||weather[i][j]=='C')
             {
@@ -96,23 +120,14 @@ int main(int argc, char** argv) {
             {
                 sunnyNumber[i] += 1;
             }
+            else
+            {
+                cout << "Couldn't read (the letter wasn't r,c,s)" << endl;
+            }
         }
     }
     
-    
-    cout << "rainNumber #" << 1 << " " << rainyNumber[0] << endl;
-    cout << "rainNumber #" << 2 << " " << rainyNumber[1] << endl;
-    cout << "rainNumber #" << 3 << " " << rainyNumber[2] << endl;
-    
-    cout << "cloudyNumber #" << 1 << " " << cloudyNumber[0] << endl;
-    cout << "cloudyNumber #" << 2 << " " << cloudyNumber[1] << endl;
-    cout << "cloudyNumber #" << 3 << " " << cloudyNumber[2] << endl;
-    
-    cout << "sunnyNumber #" << 1 << " " << sunnyNumber[0] << endl;
-    cout << "sunnyNumber #" << 2 << " " << sunnyNumber[1] << endl;
-    cout << "sunnyNumber #" << 3 << " " << sunnyNumber[2] << endl;
-    
-    
+
     
     if(rainyNumber[1]>=rainyNumber[2] && rainyNumber[1]>=rainyNumber[2])
     {
