@@ -1,5 +1,7 @@
 //should check how to do when parameter lists are const int
 
+//using pointers, you actually don't need to return values
+
 
 /*
  * Read in a dynamic array.
