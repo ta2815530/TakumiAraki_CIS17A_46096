@@ -13,9 +13,9 @@ CND_BUILDDIR=build
 CND_DLIB_EXT=dylib
 NBTMPDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}/tmp-packaging
 TMPDIRNAME=tmp-packaging
-OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ch9_sum2d_dynamicmemoryallocation_cis17a
-OUTPUT_BASENAME=ch9_sum2d_dynamicmemoryallocation_cis17a
-PACKAGE_TOP_DIR=ch9sum2ddynamicmemoryallocationcis17a/
+OUTPUT_PATH=${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/ch9_2daugment_dynamicmemoryallocation_cis17a
+OUTPUT_BASENAME=ch9_2daugment_dynamicmemoryallocation_cis17a
+PACKAGE_TOP_DIR=ch92daugmentdynamicmemoryallocationcis17a/
 
 # Functions
 function checkReturnCode
@@ -60,15 +60,15 @@ mkdir -p ${NBTMPDIR}
 
 # Copy files and create directories and links
 cd "${TOP}"
-makeDirectory "${NBTMPDIR}/ch9sum2ddynamicmemoryallocationcis17a/bin"
+makeDirectory "${NBTMPDIR}/ch92daugmentdynamicmemoryallocationcis17a/bin"
 copyFileToTmpDir "${OUTPUT_PATH}" "${NBTMPDIR}/${PACKAGE_TOP_DIR}bin/${OUTPUT_BASENAME}" 0755
 
 
 # Generate tar file
 cd "${TOP}"
-rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/ch9sum2ddynamicmemoryallocationcis17a.tar
+rm -f ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/ch92daugmentdynamicmemoryallocationcis17a.tar
 cd ${NBTMPDIR}
-tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/ch9sum2ddynamicmemoryallocationcis17a.tar *
+tar -vcf ../../../../${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/package/ch92daugmentdynamicmemoryallocationcis17a.tar *
 checkReturnCode
 
 # Cleanup

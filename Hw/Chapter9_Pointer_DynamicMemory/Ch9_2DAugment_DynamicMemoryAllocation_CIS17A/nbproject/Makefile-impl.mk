@@ -24,7 +24,7 @@ CLEAN_SUBPROJECTS=${CLEAN_SUBPROJECTS_${SUBPROJECTS}}
 
 
 # Project Name
-PROJECTNAME=Ch9_Sum2D_DynamicMemoryAllocation_CIS17A
+PROJECTNAME=Ch9_2DAugment_DynamicMemoryAllocation_CIS17A
 
 # Active Configuration
 DEFAULTCONF=Debug
