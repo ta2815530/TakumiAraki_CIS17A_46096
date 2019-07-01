@@ -102,5 +102,4 @@ void prntAry(const int *array, int size)
     }
     cout << array[size-1];
     
-    
 }

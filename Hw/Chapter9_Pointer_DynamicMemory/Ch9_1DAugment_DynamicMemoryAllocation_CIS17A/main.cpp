@@ -35,11 +35,16 @@ int main(int argc, char** argv) {
     
     augP = augment(aptr, size);
     
+    prntAry(aptr, size);
+    cout << endl;
+    
     prntAry(augP, size+1);
     
     
     delete [] aptr;
+    delete [] augP;
     aptr = nullptr;
+    augP = nullptr;
     
     return 0;
 }
@@ -50,12 +55,12 @@ int *getData(int &size)
 {
     int *aptr = nullptr;
     
-    cout << "Enter the size of the array: " << endl;
+    //cout << "Enter the size of the array: " << endl;
     cin >> size;
     
     aptr = new int [size];
     
-    cout << "Enter the contents of the array: " << endl;
+    //cout << "Enter the contents of the array: " << endl;
     for(int i=0;i<size;i++)
     {
         cin >> *(aptr+i);
@@ -73,7 +78,6 @@ int *augment(const int *array, int size)
     for(int i=0;i<size;i++)
     {
         *(aptr+i+1) = *(array+i);
-        cout << "* ";
     }
 
     return aptr;
