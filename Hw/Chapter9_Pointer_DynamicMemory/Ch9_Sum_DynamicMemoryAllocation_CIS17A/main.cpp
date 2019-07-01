@@ -35,10 +35,16 @@ int main(int argc, char** argv) {
     
     sumP  = sumAry(aptr, size);
     
-    prntAry(sumP, size+1);
+    cout << "Original: " << endl;
+    prntAry(aptr, size);
+    cout << endl;
+    
+    cout << "Sum: " << endl;
+    prntAry(sumP, size);
     
     
     delete [] aptr;
+    delete [] sumP;
     
     
     return 0;
@@ -48,12 +54,12 @@ int *getData(int &size)
 {
     int *array = nullptr;
 
-    cout << "Enter the size of the array: " << endl;
+    //cout << "Enter the size of the array: " << endl;
     cin >> size;
     
     array = new int [size];
     
-    cout << "Input the contents of the array." << endl;
+    //cout << "Input the contents of the array." << endl;
     for(int i=0;i<size;i++)
     {
         cin >> *(array + i);
@@ -66,22 +72,24 @@ int *getData(int &size)
 
 int *sumAry(const int *array, int size)
 {
-    int *sumP = new int [size+1];
-    int total=0;
+    int *sumP = new int [size];
+    int *total = new int [size];        //I need to make this guy an array (dynamically allocated)
+
     
-    for(int i=0;i<size;i++)
+    *total = *array;
+    for(int i=1;i<size;i++)
     {
-        total += *(array+i);
+        *(total+i) = *(array+i) + *(total+i-1);     
+        
+        //cout << *(array+i) << " " << *(total+i-1) << " " << *(total+i) << endl;
+    
     }
     
     for(int i=0;i<size;i++)
     {
-        *(sumP+i) = *(array+i);
-    }
-    
-    sumP[size] = total;
-    
-    
+        *(sumP+i) = *(total+i);
+    } 
+
     return sumP;
 }
 
