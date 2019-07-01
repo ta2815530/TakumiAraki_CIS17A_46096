@@ -75,17 +75,6 @@ int **getData(int &row, int &col)
         }
     }
     
-    /*
-    cout << "Succeeded in reading. " << endl; 
-    for(int i=0;i<row;i++)
-    {
-        for(int j=0;j<col;j++)
-        {
-            cout << *(aptr[i] + j) << " ";
-        }
-        cout << endl;
-    }    
-    */
     
     return aptr;
 }
@@ -94,13 +83,14 @@ void prntDat(const int* const *array, int row, int col)
 {
     for(int i=0;i<row;i++)
     {
-        for(int j=0;j<col;j++)
+        for(int j=0;j<col-1;j++)
         {
             cout << *(array[i] + j) << " ";
         }
-        cout << endl;
+        cout << *(array[i] + col-1) << endl;
     }  
 }
+
 
 void destroy(int **array, int row, int col)
 {
