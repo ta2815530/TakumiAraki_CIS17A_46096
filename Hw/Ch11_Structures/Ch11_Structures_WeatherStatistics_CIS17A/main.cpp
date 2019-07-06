@@ -53,6 +53,7 @@ const int NUM_MONTHS = 12;
 
 int main(){
 	//your code here
+    bool good = false;
     
     Weather weather[NUM_MONTHS];
     
@@ -65,14 +66,55 @@ int main(){
         //displayMonth(i);
         cin >> weather[i].RAINFALL;
         
-        cout << "Enter the lowest temperature: ";
-        cin >> weather[i].LOWTEMP;
+        do{
+            good = false;
+            
+            //cout << "Enter the lowest temperature: ";
+            cin >> weather[i].LOWTEMP;
+            
+            if(weather[i].LOWTEMP<-100||weather[i].LOWTEMP>140)
+            {
+                cin.clear();
+                cin.ignore(10000,'\n');
+            //    cout << "Invalid value." << endl;
+            }
+            else good = true;
+            
+        }while(!good);
         
-        cout << "Enter the highest temperature: ";
-        cin >> weather[i].HIGHTEMP;
-
-        cout << "Enter the average temperature: ";
-        cin >> weather[i].AVETEMP;
+        do{
+            good = false;
+            
+            //cout << "Enter the highest temperature: ";
+            cin >> weather[i].HIGHTEMP;
+            
+            if(weather[i].HIGHTEMP<-100||weather[i].HIGHTEMP>140)
+            {
+                cin.clear();
+                cin.ignore(10000,'\n');
+            //    cout << "Invalid value." << endl;
+            }
+            else good = true;
+            
+        }while(!good);
+        
+         do{
+            good = false;
+            
+            //cout << "Enter the average temperature: ";
+            cin >> weather[i].AVETEMP;
+            
+            if(weather[i].AVETEMP<-100||weather[i].AVETEMP>140)
+            {
+                cin.clear();
+                cin.ignore(10000,'\n');
+                //cout << "Invalid value." << endl;
+            }
+            else good = true;
+            
+        }while(!good);
+        
+        
     }
     
     calculate(weather);
@@ -85,8 +127,8 @@ int main(){
 
 void calculate(Weather *weather) 
 {
-    double maxTemp=-DBL_MIN,
-            minTemp=-DBL_MAX;
+    double maxTemp=-1000,//-DBL_MIN,
+            minTemp=100000;//-DBL_MAX;
     
     double totalRain=0,
            totalTemp=0,    
@@ -107,7 +149,7 @@ void calculate(Weather *weather)
             maxTemp = (weather+i)->HIGHTEMP;
             highTemp_Month = (weather+i)->MONTH;
         }
-        if(minTemp<(weather+i)->LOWTEMP)
+        if(minTemp>(weather+i)->LOWTEMP)
         {
             minTemp = (weather+i)->LOWTEMP;
             lowTemp_Month = (weather+i)->MONTH;
@@ -120,6 +162,7 @@ void calculate(Weather *weather)
     
     
     //display
+    cout << setprecision(2);
     
     cout << "The total rainfall: " << totalRain << endl;
     cout << "The average monthly rainfall: " << aveRain << endl;
