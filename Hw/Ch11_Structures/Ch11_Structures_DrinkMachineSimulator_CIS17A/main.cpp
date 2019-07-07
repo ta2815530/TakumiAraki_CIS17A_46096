@@ -1,3 +1,6 @@
+//finished modifying code on code-E so copy and paste the code from there
+
+
 /*
  * Write a program that simulates a soft drink machine. 
  * The program should use a structure
