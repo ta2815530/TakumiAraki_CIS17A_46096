@@ -41,16 +41,15 @@ int main(int argc, char** argv) {
     cout << "Enter the name of the first file to read in data: " << endl;
     getline(cin, filename1, '\n');
     
-//    ////////
-//    createFile.open(filename1, ios::out);
-//    getline(cin, writingFile);
-//    createFile << writingFile;    
-//    createFile.close();
-//    ////////
+
+    createFile.open(filename1, ios::out);
+    getline(cin, writingFile);
+    createFile << writingFile;    
+    createFile.close();
+
     
     cout << "Enter the name of the second file to write out data: " << endl;
     cin.clear();
-    cin.ignore();
     getline(cin, filename2);
     
     inputFile.open(filename1);
