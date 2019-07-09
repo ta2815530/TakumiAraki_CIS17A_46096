@@ -1,7 +1,3 @@
-//one error: when you input 0 to one of the sales, it displays "invalid value"
-//although it's not
-
-
 #include <iostream>
 #include <iomanip>
 #include <fstream>
@@ -42,7 +38,7 @@ int main(int argc, char** argv) {
                 cout << " in the quarter #" << j+1 << endl;
                 cin >> division[i].SALES[j];
 
-                if(!division[i].SALES[j]||division[i].SALES[j]<0)     
+                if(division[i].SALES[j]<0)     
                 {   
                     cout << "Invalid value." << endl;
                     cin.clear();
