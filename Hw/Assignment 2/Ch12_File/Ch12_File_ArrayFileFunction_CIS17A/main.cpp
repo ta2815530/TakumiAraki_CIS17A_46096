@@ -1,3 +1,5 @@
+//I'll do this later
+
 /*
  //Array/File Functions
 Write a function named arrayToFile. The function should accept three arguments: 
@@ -22,7 +24,7 @@ Write a complete program that demonstrates these functions by using the
 using namespace std;
 
 //to write
-void arrayToFile(string,int*,int);      //maybe not [] after *
+void arrayToFile(string,int*,int);  
 //to read
 int *fileToArray(string,int*,int);
 
@@ -39,7 +41,8 @@ int main(int argc, char** argv) {
     cin >> size;
     */
     
-    int array[] = {1,2,3,4,5};
+    int array1[] = {1,2,3,4,5};
+    int array2[size];
     
     int *display=nullptr;
     
@@ -52,26 +55,26 @@ int main(int argc, char** argv) {
     }
     */
     
-    arrayToFile(filename,array,size);
+    arrayToFile(filename,array1,size);
     
-    display = fileToArray(filename,array,size);   //what do I need array for? - to read in
+    display = fileToArray(filename,array2,size);   //what do I need array for? - to read in
                                         //after reading into an array, I need to
                                         //display to the screen
-    
+    /*
     for(int i=0;i<size;i++)
     {
        cout << *(display+i) << " ";
     }
-    
+    */
     
     return 0;
 }
 
 void arrayToFile(string name, int *aptr, int size) 
 {
-    ofstream makeFile;
+    fstream makeFile;
     
-    makeFile.open(name, ios::binary);
+    makeFile.open(name, ios::out|ios::binary);
     
     if(makeFile)
     {
@@ -88,9 +91,9 @@ void arrayToFile(string name, int *aptr, int size)
 
 int *fileToArray(string name, int *aptr, int size)
 {
-    ifstream readFile;
+    fstream readFile;
     
-    readFile.open(name, ios::binary);
+    readFile.open(name, ios::in|ios::binary);
     
     if(readFile)
     {
@@ -101,6 +104,11 @@ int *fileToArray(string name, int *aptr, int size)
     else
     {
         cout << "Couldn't open the file..." << endl;
+    }
+    
+    for(int i=0;i<size;i++)
+    {
+        cout << *(aptr+i) << endl;
     }
 
   
